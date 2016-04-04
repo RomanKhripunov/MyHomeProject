@@ -1,7 +1,6 @@
 package roman.part09.interfaces;
 
 import java.nio.CharBuffer;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class AdaptedRandomDoubles extends RandomDoubles

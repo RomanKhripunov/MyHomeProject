@@ -1,5 +1,6 @@
 package typeinfo.pets;
-import java.util.*;
+
+import java.util.ArrayList;
 
 public class Pets {
   public static final PetCreator creator =

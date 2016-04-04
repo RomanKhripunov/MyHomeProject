@@ -1,5 +1,7 @@
 package typeinfo;//: typeinfo/Shapes.java
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 abstract class Shape {
   void draw() { System.out.println(this + ".draw()"); }

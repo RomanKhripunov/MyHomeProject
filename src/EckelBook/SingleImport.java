@@ -1,6 +1,6 @@
 package EckelBook;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class SingleImport {
     public static void main(String[] args) {

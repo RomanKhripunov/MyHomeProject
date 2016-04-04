@@ -1,7 +1,10 @@
 //: typeinfo/pets/LiteralPetCreator.java
 // Using class literals.
 package typeinfo.pets;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LiteralPetCreator extends PetCreator {
   // No try block needed.

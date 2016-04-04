@@ -1,6 +1,8 @@
 //: typeinfo/pets/ForNameCreator.java
 package typeinfo.pets;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ForNameCreator extends PetCreator {
   private static List<Class<? extends Pet>> types =

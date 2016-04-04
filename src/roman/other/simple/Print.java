@@ -1,6 +1,6 @@
 package roman.other.simple;
 
-import java.io.*;
+import java.io.PrintStream;
 
 public class Print {
 //    Печать с переводом строки
