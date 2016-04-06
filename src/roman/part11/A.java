@@ -2,7 +2,7 @@ package roman.part11;
 
 public class A {
 
-    public void getValue(Class<? extends I> i){}
+    public void getValue(<? extends I> i){}
 }
 
 class B extends A {
@@ -15,4 +15,10 @@ class B extends A {
 interface I{}
 
 interface IB extends I {}
+
+class R {
+    void doSomething(I i) {
+
+    }
+}
 
