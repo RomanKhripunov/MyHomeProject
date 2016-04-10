@@ -6,6 +6,7 @@ public class ARun {
 
     }
 }
+/*
 
 interface V1 {
     int getValue();
@@ -41,4 +42,4 @@ class B2Action extends MainAction {
     public int prepare(V2 v2) {
         return v2.getValue() * 4;
     }
-}
+}*/
