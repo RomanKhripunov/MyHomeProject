@@ -5,7 +5,7 @@ public class CheckFirstException {
     public static void main(String[] args) {
         String t = null;
         if (t == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("t == null");
         }
     }
 }
