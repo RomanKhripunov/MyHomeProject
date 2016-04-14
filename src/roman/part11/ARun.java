@@ -4,15 +4,17 @@ public class ARun {
 
     public static void main(String[] args) {
         B2Action b2Action = new B2Action();
+        B1Action b1Action = new B1Action();
         B3 b3 = new B3();
-        b2Action.prepare(b3);
+        System.out.println(b1Action.prepare(b3));
+        System.out.println(b2Action.prepare(b3));
     }
 }
 
-class B3 implements V2 {
+class B3 implements V1 {
     @Override
     public int getValue() {
-        return 0;
+        return 6;
     }
 }
 
