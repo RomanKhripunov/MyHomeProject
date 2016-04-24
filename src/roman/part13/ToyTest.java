@@ -35,6 +35,7 @@ public class ToyTest {
     public static void main(String[] args) {
         Class c = null;
 
+//        c = FancyToy.class;
         try {
             c = Class.forName("roman.part13.FancyToy");
         } catch (ClassNotFoundException e) {
