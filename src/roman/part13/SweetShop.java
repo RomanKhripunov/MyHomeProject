@@ -30,7 +30,7 @@ public class SweetShop {
         System.out.println("После создания объекта Candy");
 
         try {
-            Class.forName("Gum");
+            Class.forName("roman.part13.Gum");
         } catch (ClassNotFoundException e) {
             System.out.println("Класс Gum не найден");
         }
