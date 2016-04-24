@@ -16,7 +16,7 @@ class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle";
+        return "Circle: " + getClass().getSimpleName();
     }
 }
 
@@ -24,7 +24,7 @@ class Triangle extends Shape {
 
     @Override
     public String toString() {
-        return "Triangle";
+        return "Triangle: " + getClass().getSimpleName();
     }
 }
 
@@ -32,7 +32,7 @@ class Square extends Shape {
 
     @Override
     public String toString() {
-        return "Square";
+        return "Square: " + getClass().getSimpleName();
     }
 }
 
