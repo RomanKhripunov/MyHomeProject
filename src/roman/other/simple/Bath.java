@@ -1,6 +1,7 @@
 package roman.other.simple;
 
 public class Bath {
+
     private String
             s1 = "Счастливый",
             s2 = "Счастливый",
@@ -9,14 +10,19 @@ public class Bath {
     private Soap castille;
     private int i;
     private float toy;
-    public Bath(){
+
+    public Bath() {
         System.out.println("В конструкторе " + getClass().getName());
         s3 = "Радостный";
         toy = 3.14f;
         castille = new Soap();
     }
-    {i = 47;}
-    public String toString(){
+
+    {
+        i = 47;
+    }
+
+    public String toString() {
         if (s4 == null) {
             s4 = "Радостный";
         }
@@ -39,12 +45,15 @@ public class Bath {
     }
 }
 
-class Soap{
+class Soap {
+
     private String s;
-    Soap(){
+
+    Soap() {
         System.out.println(getClass().getName());
         s = "сконструирован";
     }
+
     public String toString() {
         return s;
     }
