@@ -8,7 +8,7 @@ public class ForNameCreator extends PetCreator {
     private static List<Class<? extends Pet>> types = new ArrayList<>();
 
     private static String[] typeNames = {
-            "roman.part13.Mut",
+            "roman.part13.Mutt",
             "roman.part13.Pug",
             "roman.part13.EgyptianMau",
             "roman.part13.Manx",

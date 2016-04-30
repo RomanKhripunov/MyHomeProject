@@ -17,22 +17,37 @@ public class PetCount {
     }
 
     public static void countPets(PetCreator creator) {
-        PetCounter petCounter = new PetCounter();
+        PetCounter counter = new PetCounter();
         for (Pet pet : creator.createArray(20)) {
             System.out.print(pet.getClass().getSimpleName() + " ");
 
             if (pet instanceof Pet) {
-                petCounter.count("Pet");
+                counter.count("Pet");
             } else if (pet instanceof Dog) {
-                petCounter.count("Dog");
+                counter.count("Dog");
             } else if (pet instanceof Mutt) {
-                petCounter.count("Mutt");
+                counter.count("Mutt");
             } else if (pet instanceof Pug) {
-                petCounter.count("Pug");
+                counter.count("Pug");
+            } else if (pet instanceof Cat) {
+                counter.count("Cat");
+            } else if (pet instanceof EgyptianMau) {
+                counter.count("EgyptianMau");
+            } else if (pet instanceof Manx) {
+                counter.count("Manx");
+            } else if (pet instanceof Cymric) {
+                counter.count("Cymric");
+            } else if (pet instanceof Rodent) {
+                counter.count("Rodent");
+            } else if (pet instanceof Rat) {
+                counter.count("Rat");
+            } else if (pet instanceof Mouse) {
+                counter.count("Mouse");
+            } else if (pet instanceof Hamster) {
+                counter.count("Hamster");
             }
-
             System.out.println();
-            System.out.println(petCounter);
+            System.out.println(counter);
         }
     }
 
