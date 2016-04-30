@@ -1,6 +1,6 @@
 package roman.part13;
 
-public class Mutt extends Pug {
+public class Mutt extends Dog {
 
     public Mutt() {
         super();
