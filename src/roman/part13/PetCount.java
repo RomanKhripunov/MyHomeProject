@@ -23,32 +23,43 @@ public class PetCount {
 
             if (pet instanceof Pet) {
                 counter.count("Pet");
-            } else if (pet instanceof Dog) {
+            }
+            if (pet instanceof Dog) {
                 counter.count("Dog");
-            } else if (pet instanceof Mutt) {
+            }
+            if (pet instanceof Mutt) {
                 counter.count("Mutt");
-            } else if (pet instanceof Pug) {
+            }
+            if (pet instanceof Pug) {
                 counter.count("Pug");
-            } else if (pet instanceof Cat) {
+            }
+            if (pet instanceof Cat) {
                 counter.count("Cat");
-            } else if (pet instanceof EgyptianMau) {
+            }
+            if (pet instanceof EgyptianMau) {
                 counter.count("EgyptianMau");
-            } else if (pet instanceof Manx) {
+            }
+            if (pet instanceof Manx) {
                 counter.count("Manx");
-            } else if (pet instanceof Cymric) {
+            }
+            if (pet instanceof Cymric) {
                 counter.count("Cymric");
-            } else if (pet instanceof Rodent) {
+            }
+            if (pet instanceof Rodent) {
                 counter.count("Rodent");
-            } else if (pet instanceof Rat) {
+            }
+            if (pet instanceof Rat) {
                 counter.count("Rat");
-            } else if (pet instanceof Mouse) {
+            }
+            if (pet instanceof Mouse) {
                 counter.count("Mouse");
-            } else if (pet instanceof Hamster) {
+            }
+            if (pet instanceof Hamster) {
                 counter.count("Hamster");
             }
+        }
             System.out.println();
             System.out.println(counter);
-        }
     }
 
     public static void main(String[] args) {
