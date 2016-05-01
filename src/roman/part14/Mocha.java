@@ -1,4 +1,4 @@
 package roman.part14;
 
-public class Mocha extends Coffe {
+public class Mocha extends Coffee {
 }
