@@ -8,7 +8,7 @@ public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
     private Class[] types = {
             Latte.class,
             Mocha.class,
-            Cappuchino.class,
+            Cappuccino.class,
             Americano.class,
             Breve.class
     };
