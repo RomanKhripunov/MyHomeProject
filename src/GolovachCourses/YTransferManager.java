@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Stack;
 
 public class YTransferManager implements TransactionManager {
 
@@ -18,6 +19,13 @@ public class YTransferManager implements TransactionManager {
         try (FileWriter fw = new FileWriter("D:\\TestTransactions.txt", true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter file = new PrintWriter(bw)) {
+
+            Stack<Integer> stack = new Stack<>();
+            stack.peek();
+
+
+
+
             try {
                 for (int i = 0; i < accounts.length; i++) {
                     while (true) {
@@ -37,6 +45,8 @@ public class YTransferManager implements TransactionManager {
 
                 return false;
             }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
