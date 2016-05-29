@@ -19,10 +19,17 @@ public class SimpleFrame {
         startButton.setBackground(Color.green);
         startButton.setBounds(100, 100, 100, 100);
 
+
         panel.add(startButton);
     }
 
     public static void main(String[] args) {
         new SimpleFrame().start();
     }
+
+//    public String inputTaskSummary() {
+//        String taskSummary;
+//        taskSummary = JOptionPane.showInputDialog("Please, type description of task:");
+//        return taskSummary;
+//    }
 }
