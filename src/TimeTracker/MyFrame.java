@@ -11,36 +11,23 @@ public class MyFrame extends JFrame {
 
     private static String windowName = "TimeTracker";
     JButton buttonStart, buttonPause, buttonStop, buttonReset;
-    JLabel labelTaskDescription;
-    JTextField filedTaskDescription;
     EventHandler eventHandler = new EventHandler();
-    String startTime, taskDescription, endTime;
+    String taskDescription;
+    String startTime, endTime, pauseTime;
 
     public MyFrame() {
-        this(windowName);
-
-    }
-
-    public MyFrame(String newWindowName) {
-        super(newWindowName);
+        super(windowName);
         setLayout(new FlowLayout());
         buttonReset = new JButton("Reset");
         buttonStart = new JButton("Start");
-//        buttonPause = new JButton("Pause");
         buttonStop = new JButton("Stop");
-        labelTaskDescription = new JLabel("Task description");
-        filedTaskDescription = new JTextField(15);
 
         add(buttonReset);
         add(buttonStart);
-//        add(buttonPause);
         add(buttonStop);
-        add(labelTaskDescription);
-        add(filedTaskDescription);
 
         buttonReset.addActionListener(eventHandler);
         buttonStart.addActionListener(eventHandler);
-//        buttonPause.addActionListener(eventHandler);
         buttonStop.addActionListener(eventHandler);
     }
 
@@ -48,7 +35,7 @@ public class MyFrame extends JFrame {
         MyFrame frame = new MyFrame();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(400, 500);
+        frame.setSize(300, 400);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
     }
@@ -73,24 +60,22 @@ public class MyFrame extends JFrame {
         startTime = null;
         taskDescription = null;
         endTime = null;
+        buttonStart.setEnabled(true);
     }
 
     public void startTrack() {
-        while (true) {
+        while (taskDescription == null || "".equals(taskDescription.trim().replaceAll("\\s+", " "))) {
             try {
-                taskDescription = JOptionPane.showInputDialog(null,
-                        "Please, type the description of task",
-                        windowName,
-                        JOptionPane.INFORMATION_MESSAGE);
-                if (taskDescription == null || "".equals(taskDescription.replaceAll("\\s+", ""))) {
+                taskDescription = showInputWindow("Please, type the description of task");
+                if (taskDescription == null || "".equals(taskDescription.trim().replaceAll("\\s+", " "))) {
                     throw new IllegalAccessException();
                 }
-                break;
+                startTime = new SimpleDateFormat("hh:mm").format(new Date());
+                buttonStart.setEnabled(false);
             } catch (IllegalAccessException e) {
-                JOptionPane.showMessageDialog(null, "Task description cannot be empty!", windowName, JOptionPane.ERROR_MESSAGE);
+                showMessageWindow("Task description cannot be empty!");
             }
         }
-        startTime = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
     }
 
     public void pauseTrack() {
@@ -98,6 +83,29 @@ public class MyFrame extends JFrame {
     }
 
     public void stopTrack() {
-        endTime = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        // todo: add @endTime to anywhere and display it
+        try {
+            if (startTime != null) {
+                endTime = new SimpleDateFormat("hh:mm").format(new Date());
+                showMessageWindow(taskDescription + ": " + startTime + " - " + endTime);
+            } else {
+                throw new NullPointerException();
+            }
+        } catch (NullPointerException e) {
+            showMessageWindow("Task doesn't start yet");
+        }
+
+        startTime = null;
+        taskDescription = null;
+        endTime = null;
+        buttonStart.setEnabled(true);
+    }
+
+    public void showMessageWindow(String msg) {
+        JOptionPane.showMessageDialog(null, msg, windowName, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public String showInputWindow(String msg) {
+        return JOptionPane.showInputDialog(null, msg, windowName, JOptionPane.INFORMATION_MESSAGE);
     }
 }
