@@ -66,10 +66,11 @@ public class MyFrame extends JFrame {
     public void startTrack() {
         while (taskDescription == null || "".equals(taskDescription.trim().replaceAll("\\s+", " "))) {
             try {
-                taskDescription = showInputWindow("Please, type the description of task");
-                if (taskDescription == null || "".equals(taskDescription.trim().replaceAll("\\s+", " "))) {
+                String tmpDescription = showInputWindow("Please, type the description of task");
+                if (tmpDescription == null || "".equals(tmpDescription.trim().replaceAll("\\s+", " "))) {
                     throw new IllegalAccessException();
                 }
+                taskDescription = tmpDescription.trim().replaceAll("\\s+", " ");
                 startTime = new SimpleDateFormat("hh:mm").format(new Date());
                 buttonStart.setEnabled(false);
             } catch (IllegalAccessException e) {
