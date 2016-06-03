@@ -11,6 +11,7 @@ public class MyFrame extends JFrame {
 
     private static String windowName = "TimeTracker";
     JButton buttonStart, buttonPause, buttonStop, buttonReset;
+    JLabel completedTask;
     EventHandler eventHandler = new EventHandler();
     String taskDescription;
     String startTime, endTime, pauseTime;
