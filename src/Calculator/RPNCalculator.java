@@ -9,8 +9,8 @@ public class RPNCalculator {
      * @param expressionInRPN - expression in RPN format
      * @return resultValue - result of calculation
      */
-    public int calculateRPN(String[] expressionInRPN) {
-        int resultValue = 0;
+    public double calculateRPN(String[] expressionInRPN) {
+        double resultValue = 0;
         String operators = "+-*/";
         Stack<String> stack = new Stack<>();
 
@@ -18,8 +18,8 @@ public class RPNCalculator {
             if (!operators.contains(elementOfExpression)) {
                 stack.push(elementOfExpression);
             } else {
-                int firstNumber = Integer.valueOf(stack.pop());
-                int secondNumber = Integer.valueOf(stack.pop());
+                double firstNumber = Double.valueOf(stack.pop());
+                double secondNumber = Double.valueOf(stack.pop());
 
                 switch (elementOfExpression) {
                     case "+":
@@ -38,7 +38,7 @@ public class RPNCalculator {
             }
         }
 
-        resultValue = Integer.valueOf(stack.pop());
+        resultValue = Double.valueOf(stack.pop());
         return resultValue;
     }
 }
