@@ -1,12 +1,12 @@
 package Calculator;
 
-import java.util.Arrays;
-
 public class StringConverter {
 
     public static void main(String[] args) {
-        ExpressionBuilder reader = new ExpressionBuilder();
+        RPNExpressionBuilder reader = new RPNExpressionBuilder();
         String templateExpression = reader.readExpression();
-        System.out.println(Arrays.toString(reader.convertExpToSymbol(templateExpression)));
+//        System.out.println(templateExpression);
+//        System.out.println(Arrays.toString(reader.convertExpToSymbol(templateExpression)));
+        System.out.println(reader.convertExpressionToSymbol(templateExpression));
     }
 }

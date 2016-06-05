@@ -4,21 +4,30 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ExpressionBuilder {
+public class RPNExpressionBuilder {
 
     public String readExpression() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Please, type the your expression:");
         String textExpression = null;
         try {
-            textExpression = reader.readLine();
+            textExpression = reader.readLine().trim().replaceAll("\\s+", "");
         } catch (IOException e) {
-            // todo
+            System.out.println(e.getMessage());
         }
         return textExpression;
     }
 
-    public String[] convertExpToSymbol(String expression) {
-        return expression.split("[()\t,.a-zA-Z]");
+    public String convertExpressionToSymbol(String expression) {
+        StringBuilder buildStack = new StringBuilder("");
+        StringBuilder resultExpression = new StringBuilder("");
+        char symbolIn;
+        char symbolTmp;
+
+
+
+
+
+        return expression;
     }
 }
