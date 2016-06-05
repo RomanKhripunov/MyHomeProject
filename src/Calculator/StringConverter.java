@@ -7,6 +7,6 @@ public class StringConverter {
         String templateExpression = reader.readExpression();
 //        System.out.println(templateExpression);
 //        System.out.println(Arrays.toString(reader.convertExpToSymbol(templateExpression)));
-        System.out.println(reader.convertExpressionToSymbol(templateExpression));
+        reader.convertExpressionToSymbol(templateExpression);
     }
 }
