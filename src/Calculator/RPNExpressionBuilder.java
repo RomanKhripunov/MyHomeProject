@@ -29,8 +29,11 @@ public class RPNExpressionBuilder {
             case '/':
             case '%':
                 return 2;
+            case '+':
+            case '-':
+                return 1;
         }
-        return 1;
+        return 0;
     }
 
     public String readExpression() {
@@ -48,8 +51,9 @@ public class RPNExpressionBuilder {
     public String convertExpressionToRPN(String expression) throws Exception {
         StringBuilder operatorsString = new StringBuilder("");
         StringBuilder resultString = new StringBuilder("");
+        StringBuilder cosOperator = new StringBuilder();
         char charInput;
-        char charTmp;
+        char tempBracket;
 
         for (int i = 0; i < expression.length(); i++) {
             charInput = expression.charAt(i);
@@ -58,16 +62,18 @@ public class RPNExpressionBuilder {
             } else if ('(' == charInput) {
                 operatorsString.append(charInput);
             } else if (')' == charInput) {
-                charTmp = operatorsString.substring(operatorsString.length() - 1).charAt(0);
-                while ('(' != charTmp) {
+                tempBracket = operatorsString.substring(operatorsString.length() - 1).charAt(0);
+                while ('(' != tempBracket) {
                     if (operatorsString.length() < 1) {
                         throw new Exception("Ошибка разбора скобок. Проверьте правильность выражения.");
                     }
-                    resultString.append(" ").append(charTmp);
+                    resultString.append(" ").append(tempBracket);
                     operatorsString.setLength(operatorsString.length() - 1);
-                    charTmp = operatorsString.substring(operatorsString.length() - 1).charAt(0);
+                    tempBracket = operatorsString.substring(operatorsString.length() - 1).charAt(0);
                 }
                 operatorsString.setLength(operatorsString.length() - 1);
+            } else if ('c' == charInput) {
+
             } else {
                 resultString.append(charInput);
             }
@@ -101,7 +107,7 @@ public class RPNExpressionBuilder {
     public double calculate(String inputString) throws Exception {
         double firstNumber = 0, secondNumber = 0;
         String tempString;
-        Deque<Double> stack = new ArrayDeque<Double>();
+        Deque<Double> stack = new ArrayDeque<>();
         StringTokenizer st = new StringTokenizer(inputString);
         while (st.hasMoreTokens()) {
             try {
@@ -145,7 +151,7 @@ public class RPNExpressionBuilder {
         }
 
         if (stack.size() > 1) {
-            throw new Exception("Количество операторов не соответствует количеству операндов");
+            throw new Exception("Количество о   ператоров не соответствует количеству операндов");
         }
 
         return stack.pop();
