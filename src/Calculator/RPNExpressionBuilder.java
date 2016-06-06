@@ -92,7 +92,7 @@ public class RPNExpressionBuilder {
         return 1;
     }
 
-    public static double calculate(String sIn) throws Exception {
+    public double calculate(String sIn) throws Exception {
         double dA = 0, dB = 0;
         String sTmp;
         Deque<Double> stack = new ArrayDeque<Double>();
