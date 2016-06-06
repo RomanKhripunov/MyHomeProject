@@ -92,46 +92,46 @@ public class RPNExpressionBuilder {
         return 1;
     }
 
-    public double calculate(String sIn) throws Exception {
-        double dA = 0, dB = 0;
-        String sTmp;
+    public double calculate(String inputString) throws Exception {
+        double firstNumber = 0, secondNumber = 0;
+        String tempString;
         Deque<Double> stack = new ArrayDeque<Double>();
-        StringTokenizer st = new StringTokenizer(sIn);
+        StringTokenizer st = new StringTokenizer(inputString);
         while (st.hasMoreTokens()) {
             try {
-                sTmp = st.nextToken().trim();
-                if (1 == sTmp.length() && isOperator(sTmp.charAt(0))) {
+                tempString = st.nextToken().trim();
+                if (1 == tempString.length() && isOperator(tempString.charAt(0))) {
                     if (stack.size() < 2) {
-                        throw new Exception("Неверное количество данных в стеке для операции " + sTmp);
+                        throw new Exception("Неверное количество данных в стеке для операции " + tempString);
                     }
-                    dB = stack.pop();
-                    dA = stack.pop();
-                    switch (sTmp.charAt(0)) {
+                    secondNumber = stack.pop();
+                    firstNumber = stack.pop();
+                    switch (tempString.charAt(0)) {
                         case '+':
-                            dA += dB;
+                            firstNumber += secondNumber;
                             break;
                         case '-':
-                            dA -= dB;
+                            firstNumber -= secondNumber;
                             break;
                         case '/':
-                            dA /= dB;
+                            firstNumber /= secondNumber;
                             break;
                         case '*':
-                            dA *= dB;
+                            firstNumber *= secondNumber;
                             break;
                         case '%':
-                            dA %= dB;
+                            firstNumber %= secondNumber;
                             break;
                         case '^':
-                            dA = Math.pow(dA, dB);
+                            firstNumber = Math.pow(firstNumber, secondNumber);
                             break;
                         default:
-                            throw new Exception("Недопустимая операция " + sTmp);
+                            throw new Exception("Недопустимая операция " + tempString);
                     }
-                    stack.push(dA);
+                    stack.push(firstNumber);
                 } else {
-                    dA = Double.parseDouble(sTmp);
-                    stack.push(dA);
+                    firstNumber = Double.parseDouble(tempString);
+                    stack.push(firstNumber);
                 }
             } catch (Exception e) {
                 throw new Exception("Недопустимый символ в выражении");

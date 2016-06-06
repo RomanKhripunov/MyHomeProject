@@ -8,5 +8,6 @@ public class StringConverter {
         String exitFlag = null;
         String templateExpression = calculateExpression.readExpression();
         templateExpression = calculateExpression.convertExpressionToRPN(templateExpression);
+        System.out.println(calculateExpression.calculate(templateExpression));
     }
 }
