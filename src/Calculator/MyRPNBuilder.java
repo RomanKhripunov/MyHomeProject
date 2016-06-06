@@ -19,7 +19,6 @@ public class MyRPNBuilder {
     }
 
     public String[] convertToRPN(String inputString) {
-        String[] splitElements = inputString.split("[^*/a-zA-Z\\s0-9+-]+");
-        return splitElements;
+        return inputString.split("[\\\\s0-9+-]+");
     }
 }

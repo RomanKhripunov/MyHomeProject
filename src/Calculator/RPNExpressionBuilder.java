@@ -48,7 +48,7 @@ public class RPNExpressionBuilder {
         return textExpression;
     }
 
-    public String convertExpressionToRPN(String expression) throws Exception {
+    public String convertToRPN(String expression) throws Exception {
         StringBuilder operatorsString = new StringBuilder("");
         StringBuilder resultString = new StringBuilder("");
         StringBuilder cosOperator = new StringBuilder();
